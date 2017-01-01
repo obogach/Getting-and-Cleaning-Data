@@ -150,17 +150,7 @@ GenerateSecondOutputDataset <- function(inDataSet) {
                                                  names(dt)[3:81], 
                                                  function(x) paste0("Avg-", 
                                                                     x))))
-#  aggDataActivity <- dt[, lapply(.SD, mean), by = c("Activity"), 
-#                        .SDcols=names(dt)[3:81]]
-#  aggDataPersonId <- dt[, lapply(.SD, mean), by = c("SubjectId"), 
-#                        .SDcols=names(dt)[3:81]]
-#  setnames(aggDataActivity, c("GroupedByFactor", names(dt)[3:81])) #rename rest of the columns 
-#  setnames(aggDataPersonId, c("GroupedByFactor", names(dt)[3:81])) #rename rest of the columns 
-#  #add factor name column along with factor value column 
-#  aggDataPersonId <- aggdataPersonId[order(as.integer(aggdataPersonId$GroupBy)), ]
-#  dt <- rbind(aggdataActivity, aggdataPersonId, make.row.names = FALSE)
-#  #mapply(c, aggdataActivity, aggdataPersonId)
-  
+
   write.csv(x = dt, 
             file = paste0(getwd(), workingDirectory, "/", 
                           secondOutputDatasetFile),
