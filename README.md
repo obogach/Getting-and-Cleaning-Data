@@ -70,17 +70,3 @@ More details on original data set can be found at  [http://archive.ics.uci.edu/m
 ### Resulting data set, code book 
 Resulting data set is composed according to the requirements stated in [Peer-graded Assignment: Getting and Cleaning Data Course Project](https://www.coursera.org/learn/data-cleaning/peer/FIZtT/getting-and-cleaning-data-course-project)
 More details on manipulations and variables can be found in the code book.
-
-Following manipulations were made on the original data set:
-
-*  It was downloaded and unpacked.
-*  Test and train observations were merged into one data set. 
-*  Only mean and standard deviation variables for each measurement were 
-   considered.
-*  Merged data set was enriched with descriptive subject and activity variables 
-   for every measurement.
-*  Resulting data set was created as an average of each variable for each 
-   activity and each subject. All variables were named in descriptive manner. 
-   See code book for more details.
-*  Finally, resulting data set was materialized as a csv file with header. 
-
