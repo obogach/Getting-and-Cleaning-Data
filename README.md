@@ -4,7 +4,7 @@ This repo is created to verify programming assignment for the course
 "Getting and Cleaning Data". It consists of:
 
 *  [script (run_analysis.R)](https://github.com/obogach/Getting-and-Cleaning-Data/blob/master/run_analysis.R). 
-*  [resulting data set (output_dataset_2.csv)](https://github.com/obogach/Getting-and-Cleaning-Data/blob/master/output_dataset_2.csv)
+*  [resulting data set (output_dataset_2.txt)](https://github.com/obogach/Getting-and-Cleaning-Data/blob/master/output_dataset_2.txt)
 *  [code book (code_book.md)](https://github.com/obogach/Getting-and-Cleaning-Data/blob/master/code_book.md)
 *  readme.md (this file)
 

@@ -7,7 +7,7 @@ originalDatasetFile     = basename(originalDatasetURL)
 extractDirectory        = "/extract"
 headerDirectory         = "/UCI HAR Dataset"
 firstOutputDatasetFile  = "output_dataset_1.csv"
-secondOutputDatasetFile = "output_dataset_2.csv"
+secondOutputDatasetFile = "output_dataset_2.txt"
 
 
 GetOriginalDataset <- function() {
@@ -152,13 +152,13 @@ GenerateSecondOutputDataset <- function(inDataSet) {
                                                  names(dt)[3:81], 
                                                  function(x) paste0("Avg-", 
                                                                     x))))
-
-  write.csv(x = dt, 
-            file = paste0(getwd(), workingDirectory, "/", 
-                          secondOutputDatasetFile),
-            row.names = FALSE, 
-            quote = FALSE, 
-            fileEncoding = "UTF-8")
+  write.table(x = dt, 
+              file = paste0(getwd(), workingDirectory, "/", 
+                            secondOutputDatasetFile),
+              sep = ",",
+              row.names = FALSE, 
+              quote = FALSE, 
+              fileEncoding = "UTF-8")
 }
 
 
