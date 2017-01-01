@@ -173,6 +173,6 @@ GenerateSecondOutputDataset <- function(inDataSet) {
 RunAnalysis <- function() {
   GetOriginalDataset()
   dt <- MergeObservations()
-  GenerateFirstOutputDataset(dt)
+  #GenerateFirstOutputDataset(dt)
   GenerateSecondOutputDataset(dt)
 }
