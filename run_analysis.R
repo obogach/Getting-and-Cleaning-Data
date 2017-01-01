@@ -11,7 +11,7 @@ secondOutputDatasetFile = "output_dataset_2.csv"
 
 
 GetOriginalDataset <- function() {
-  # Downloads original dataset from rempte resource into the specially created   
+  # Downloads original dataset from remote resource into the specially created   
   # sub-directory of current working directory and uzips all the files
   
   # create directory for this exercise 
@@ -43,7 +43,7 @@ ReadHeaderFile <- function (inFileName) {
   #    
   # Returns:
   #   Data frame with to link to two variables - id and val. Variable "id" is 
-  #   an  encoded representation of "val" variable.
+  #   an encoded representation of "val" variable.
   #
   headerFilename <- paste0(getwd(), workingDirectory, "/", extractDirectory, 
                            headerDirectory, "/", inFileName)
@@ -67,7 +67,8 @@ ReadObservationsFile <- function (inDataSet) {
   #              corresponds to test data set; value "train" corresponds to
   #              train dataset
   #    
-  # Returns: data table with descriptive activity name, subject, and measurments   
+  # Returns: data table with descriptive activity name, subject, and 
+  # measurements   
 
   # read list of features and select only related to standard deviation or mean
   features <- ReadHeaderFile("features.txt")
@@ -83,10 +84,11 @@ ReadObservationsFile <- function (inDataSet) {
   subjectFile <- paste0(observationDirectory, paste0(inDataSet, "/subject_", 
                                                      inDataSet, ".txt"))
   # read observation file
-  fileData <- fread(input     = observationsFile,
-                    header    = FALSE,
-                    select    = features$id,
-                    col.names = features$val)
+  fileData <- fread(input        = observationsFile,
+                    header       = FALSE,
+                    select       = features$id,
+                    col.names    = features$val,
+                    showProgress = FALSE)
   # read activity leabels for the obser
   activities <- ReadHeaderFile("activity_labels.txt")
   # read activities for the observation
@@ -136,7 +138,7 @@ GenerateFirstOutputDataset <- function(inDataSet) {
 GenerateSecondOutputDataset <- function(inDataSet) {
   # Generates second required data set for merged observations 
   # (test and train sets) which contains all variables returned by 
-  # ReadObservationsFile() except "SubjectId"
+  # ReadObservationsFile() as per assignment
   # 
   # Arguments:
   #   inDataSet - merged observations data set 
@@ -161,6 +163,7 @@ GenerateSecondOutputDataset <- function(inDataSet) {
 
 
 RunAnalysis <- function() {
+  # Executes all steps required to generate output data tidy set
   GetOriginalDataset()
   dt <- MergeObservations()
   #GenerateFirstOutputDataset(dt)
