@@ -11,7 +11,8 @@ Following manipulations were made on the [original data set](https://d396qusza40
 *  Resulting data set was created as an average of each variable for each 
    activity and each subject. All variables were named in descriptive manner. 
    See data dictionary section below for more details.
-*  Finally, resulting data set was materialized as a csv file with header. 
+*  Resulting data set was sorted by `Activity` and `SubjectId` columns.
+*  Finally, resulting data set was materialized as a txt file with header.
 
 ### Acceptance criteria
 
